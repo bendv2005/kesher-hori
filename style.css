@@ -226,3 +226,24 @@ footer {
       margin-bottom: 2rem;
   }
 }
+
+.about-image .hero-image {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    border: 5px solid var(--color-accent);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
