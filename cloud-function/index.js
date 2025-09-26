@@ -22,7 +22,7 @@ exports.getBlogPosts = async (req, res) => {
     const sheets = google.sheets({ version: 'v4', auth });
 
     const SHEET_ID = '1iOrIKNymNYSZPX0zVGTQNvxeQgWe3QhVMtSRj8yH1nY';
-    const RANGE = 'A2:P'; // Covers all 16 columns (A to P)
+
 
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId: SHEET_ID,
