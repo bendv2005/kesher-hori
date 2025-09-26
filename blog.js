@@ -1,12 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const API_KEY = 'YOUR_API_KEY'; // <-- PASTE YOUR API KEY HERE
-    const SHEET_ID = '1iOrIKNymNYSZPX0zVGTQNvxeQgWe3QhVMtSRj8yH1nY';
-    const RANGE = 'A2:D'; // Assuming your data is in columns A to D, starting from row 2
+    const CLOUD_RUN_SERVICE_URL = 'https://blogkesherhori-422760875497.europe-west1.run.app'; // Your deployed Cloud Run service URL
 
     const postsContainer = document.getElementById('posts-container');
 
     if (postsContainer) {
-        fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${RANGE}?key=${API_KEY}`)
+        fetch(CLOUD_RUN_SERVICE_URL)
             .then(response => response.json())
             .then(data => {
                 const posts = data.values;
