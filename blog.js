@@ -10,12 +10,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 const posts = data.values;
                 if (posts && posts.length > 0) {
                     posts.forEach(post => {
-                        const [id, title, content, createdAt] = post;
                         const postElement = document.createElement('article');
+                        postElement.classList.add('blog-post-card'); // Add a class for styling
+
+                        let featuredImageHtml = '';
+                        if (post.featuredImage) {
+                            featuredImageHtml = `<div class="post-image"><img src="${post.featuredImage}" alt="${post.title}"></div>`;
+                        }
+
                         postElement.innerHTML = `
-                            <h4>${title}</h4>
-                            <p>${content}</p>
-                            <small>${createdAt}</small>
+                            ${featuredImageHtml}
+                            <div class="post-content">
+                                <h4>${post.title}</h4>
+                                <p class="post-excerpt">${post.excerpt}</p>
+                                <div class="post-meta">
+                                    <span>מאת: ${post.author}</span>
+                                    <span>פורסם ב: ${new Date(post.publishDate).toLocaleDateString('he-IL')}</span>
+                                </div>
+                                <a href="${post.slug ? 'blog/' + post.slug + '.html' : '#'}" class="read-more-link">קרא עוד</a>
+                            </div>
                         `;
                         postsContainer.appendChild(postElement);
                     });
