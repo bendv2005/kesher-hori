@@ -1,0 +1,9 @@
+{
+  "name": "kesher-hori-blog-function",
+  "version": "1.0.0",
+  "description": "Google Cloud Function to fetch blog posts from a Google Sheet.",
+  "main": "index.js",
+  "dependencies": {
+    "googleapis": "^100.0.0"
+  }
+}
