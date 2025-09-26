@@ -21,9 +21,9 @@ exports.getBlogPosts = async (req, res) => {
     });
     const sheets = google.sheets({ version: 'v4', auth });
     const SHEET_ID = '1iOrIKNymNYSZPX0zVGTQNvxeQgWe3QhVMtSRj8yH1nY';
-    const RANGE = 'A2:D';
+    const RANGE = 'A2:P'; // Updated to cover all 16 columns (A to P)
 
-    const sheets = google.sheets({ version: 'v4', auth: API_KEY });
+    const sheets = google.sheets({ version: 'v4', auth });
 
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId: SHEET_ID,
@@ -33,15 +33,25 @@ exports.getBlogPosts = async (req, res) => {
     const rows = response.data.values;
     if (rows && rows.length > 0) {
       const posts = rows.map(row => ({
-        id: row[0],
-        title: row[1],
-        content: row[2],
-        createdAt: row[3],
+        title: row[0] || '',
+        slug: row[1] || '',
+        publishDate: row[2] || '',
+        author: row[3] || '',
+        excerpt: row[4] || '',
+        body: row[5] || '',
+        tags: row[6] ? row[6].split(',').map(tag => tag.trim()) : [],
+        ctaText: row[7] || '',
+        ctaLink: row[8] || '',
+        featuredImage: row[9] || '',
+        seoTitle: row[10] || '',
+        seoDescription: row[11] || '',
+        metaKeywords: row[12] ? row[12].split(',').map(keyword => keyword.trim()) : [],
+        socialPostShort: row[13] || '',
+        socialPostLong: row[14] || '',
+        notes: row[15] || '',
       }));
       res.status(200).json(posts);
-    } else {
-      res.status(200).json([]);
-    }
+
   } catch (error) {
     console.error('Error fetching blog posts:', error);
     res.status(500).send('Error fetching blog posts.');
