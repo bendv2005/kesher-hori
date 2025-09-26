@@ -2,7 +2,7 @@ const { google } = require('googleapis');
 
 exports.getBlogPosts = async (req, res) => {
   // Set CORS headers for preflight requests
-  res.set('Access-Control-Allow-Origin', 'https://kesher-hori.com');
+  res.set('Access-Control-Allow-Origin', 'https://kesher-hori.com'); // Replace with your actual domain
   res.set('Access-Control-Allow-Methods', 'GET');
   res.set('Access-Control-Allow-Headers', 'Content-Type');
   res.set('Access-Control-Max-Age', '3600');
@@ -14,14 +14,15 @@ exports.getBlogPosts = async (req, res) => {
   }
 
   try {
-        // Authenticate using the service account key from the environment variable
+    // Authenticate using the service account key from the environment variable
     const auth = new google.auth.GoogleAuth({
       credentials: JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON),
       scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'],
     });
     const sheets = google.sheets({ version: 'v4', auth });
-    const SHEET_ID = '1iOrIKNymNYSZPX0zVGTQNvxeQgWe3QhVMtSRj8yH1nY';
 
+    const SHEET_ID = '1iOrIKNymNYSZPX0zVGTQNvxeQgWe3QhVMtSRj8yH1nY';
+    const RANGE = 'A2:P'; // Covers all 16 columns (A to P)
 
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId: SHEET_ID,
@@ -49,6 +50,8 @@ exports.getBlogPosts = async (req, res) => {
         notes: row[15] || '',
       }));
       res.status(200).json(posts);
+    } else {
+      res.status(200).json([]); // Return empty array if no posts found
     }
 
   } catch (error) {
