@@ -14,7 +14,12 @@ exports.getBlogPosts = async (req, res) => {
   }
 
   try {
-    const API_KEY = process.env.GOOGLE_SHEETS_API_KEY;
+        // Authenticate using the service account key from the environment variable
+    const auth = new google.auth.GoogleAuth({
+      credentials: JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON),
+      scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'],
+    });
+    const sheets = google.sheets({ version: 'v4', auth });
     const SHEET_ID = '1iOrIKNymNYSZPX0zVGTQNvxeQgWe3QhVMtSRj8yH1nY';
     const RANGE = 'A2:D';
 
