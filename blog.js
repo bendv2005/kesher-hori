@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch(CLOUD_RUN_SERVICE_URL)
             .then(response => response.json())
             .then(data => {
-                const posts = data.values;
+                const posts = data;
                 if (posts && posts.length > 0) {
                     posts.forEach(post => {
                         const postElement = document.createElement('article');
