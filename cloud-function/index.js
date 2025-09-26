@@ -49,6 +49,7 @@ exports.getBlogPosts = async (req, res) => {
         notes: row[15] || '',
       }));
       res.status(200).json(posts);
+    }
 
   } catch (error) {
     console.error('Error fetching blog posts:', error);
