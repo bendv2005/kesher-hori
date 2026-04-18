@@ -1,81 +1,102 @@
-
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>הצהרת נגישות - הודלי איילון</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
-  <link rel="manifest" href="images/favicon_io/site.webmanifest">
-  <link rel="stylesheet" href="style.css">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NRT8DCQV0R"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta name="description" content="הודלי איילון - הדרכת הורים. האתר בשיפוצים ויתעדכן בקרוב.">
+  <title>הודלי איילון | בקרוב...</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #4FB5A8;
+      --color-secondary: #3A3A3A;
+      --color-accent: #A4D4CD;
+      --color-background: #FFFFFF;
+      --color-text: #2E2E2E;
+      --color-light-gray: #f9f9f9;
+    }
 
-  gtag('config', 'G-NRT8DCQV0R');
-</script>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Heebo', sans-serif;
+      background-color: var(--color-light-gray);
+      color: var(--color-text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      direction: rtl;
+    }
+
+    .container {
+      background: var(--color-background);
+      padding: 3rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      max-width: 500px;
+      width: 90%;
+    }
+
+    h1 {
+      color: var(--color-primary);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: var(--color-secondary);
+    }
+
+    .contact-info {
+      border-top: 1px solid var(--color-accent);
+      padding-top: 2rem;
+    }
+
+    .contact-info a {
+      display: inline-block;
+      margin: 0.5rem 1rem;
+      color: var(--color-primary);
+      text-decoration: none;
+      font-weight: bold;
+      transition: opacity 0.2s;
+    }
+
+    .contact-info a:hover {
+      opacity: 0.7;
+    }
+
+    .logo-placeholder {
+      width: 80px;
+      height: 80px;
+      background-color: var(--color-primary);
+      border-radius: 50%;
+      margin: 0 auto 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div class="container header-container">
-      <a href="index.html" class="logo"><h1>הודלי איילון</h1></a>
-      <nav>
-        <ul>
-          <li><a href="index.html#about">אודות</a></li>
-          <li><a href="index.html#services">שירותים</a></li>
-          <li><a href="blog.html">בלוג</a></li>
-          <li><a href="index.html#contact">צור קשר</a></li>
-        </ul>
-      </nav>
-      <a href="index.html#contact" class="cta">לתיאום שיחה</a>
+  <div class="container">
+    <div class="logo-placeholder">הא</div>
+    <h1>הודלי איילון</h1>
+    <p>האתר עובר שדרוג ויתעדכן בקרוב מאוד...</p>
+    
+    <div class="contact-info">
+      <h3>בינתיים מוזמנים ליצור קשר:</h3>
+      <a href="mailto:ayalonhodeli@gmail.com">דוא"ל</a>
+      <a href="https://wa.me/972586510056" target="_blank" rel="noopener noreferrer">ווטסאפ</a>
     </div>
-  </header>
-
-  <main>
-    <section>
-      <div class="container">
-        <h2>הצהרת נגישות</h2>
-        <p>אנו רואים חשיבות רבה במתן שירות שוויוני לכלל האוכלוסייה, לרבות גולשים עם מוגבלות. אתר זה נבנה בהתאם לתקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג-2013, ולתקן הישראלי ת"י 5568, המבוסס על הנחיות WCAG 2.0 לרמה AA.</p>
-
-        <h3>תיאור ההתאמות שבוצעו באתר</h3>
-        <ul>
-          <li>האתר מותאם לדפדפנים הנפוצים ולשימוש בטלפון סלולרי.</li>
-          <li>האתר תומך בניווט באמצעות מקלדת בלבד.</li>
-          <li>תכני האתר כתובים בשפה פשוטה וברורה.</li>
-          <li>מבנה האתר היררכי וכולל כותרות ברורות.</li>
-          <li>לכל התמונות באתר יש טקסט חלופי (alt).</li>
-          <li>הקישורים באתר ברורים ומסבירים לאן הם מובילים.</li>
-          <li>הניגודיות בין צבע הטקסט לרקע גבוהה וברורה.</li>
-          <li>ניתן לשנות את גודל הגופנים באמצעות המקלדת (Ctrl ו-+ או Ctrl ו--).</li>
-        </ul>
-
-        <h3>רכז נגישות</h3>
-        <p>אם נתקלתם בבעיית נגישות באתר, או אם אתם זקוקים לעזרה, אתם מוזמנים לפנות לרכז הנגישות שלנו:</p>
-        <ul>
-          <li>שם: הודלי איילון</li>
-          <li>דוא"ל: <a href="mailto:ayalonhodeli@gmail.com">ayalonhodeli@gmail.com</a></li>
-          <li>טלפון: <a href="tel:+972586510056">058-6510056</a></li>
-        </ul>
-        <p>אנו מתחייבים לבדוק ולטפל בכל פנייה בהקדם האפשרי.</p>
-
-        <h3>משוב ושיפור מתמיד</h3>
-        <p>אנו שואפים לשמור ולשפר את רמת הנגישות באתר. אם מצאתם רכיב או עמוד שאינו נגיש, נשמח אם תפנו אלינו. אנו נלמד את הנושא ונבצע את ההתאמות הנדרשות בהקדם.</p>
-
-        <p>הצהרת הנגישות עודכנה לאחרונה בתאריך: 25 באוגוסט 2025</p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p><a href="accessibility.html">הצהרת נגישות</a></p>
-      <p>© 2025 הודלי איילון | כל הזכויות שמורות</p>
-    </div>
-  </footer>
+  </div>
 </body>
 </html>
